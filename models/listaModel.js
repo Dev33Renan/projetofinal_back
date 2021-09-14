@@ -11,4 +11,4 @@ const Tarefa = new mongoose.Schema ({
 
 })
 
-model.exports = mongoose.model('tarefa', Tarefa)
+module.exports = mongoose.model('tarefa', Tarefa)
