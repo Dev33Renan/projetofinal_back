@@ -7,7 +7,7 @@ const Tarefa = new mongoose.Schema ({
     prioridade: {type: String, required: true},
     status:{type: String, required: true},
     prazo:{type: String, required:true},
-    datadecriacao:{type:Date, required:true},
+    datadecriacao:{type:Date, default:Date.now},
 
 })
 
