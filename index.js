@@ -6,8 +6,6 @@ if(process.env.NODE_ENV !== 'production') {
 const express = require('express');
 const cors = require('cors');
 const Conn = require('./conn/index');
-const app = express();
-const routers = require('./routers/routers');
 
 
 
@@ -20,10 +18,11 @@ const db_data = process.env.DB_DATA;
 Conn(db_url, db_user, db_pass,db_data);
 
 
-let corsOptions = {origin:'http://localhost:3000',
+const corsOptions = {origin:'http://localhost:3000',
     optionsSuccessStatus:200,
 
 } 
+const app = express();
 app.use (cors(corsOptions))
 app.use (express.json())
 

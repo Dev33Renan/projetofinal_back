@@ -55,7 +55,6 @@ updateTarefa = async (req, res) => {
         tarefa.descricao = body.descricao
         tarefa.prioridade = body.status
         tarefa.prazo = body.prazo
-        tarefa.datadecriacao = body,datadecriacao
         tarefa
             .save()
             .then(() => {
@@ -91,7 +90,7 @@ deleteTarefa = async (req, res) => {
 }
 
 getTarefaById = async (req, res) => {
-    await Tarefa.findById({ _id: req.params.id }, (err, tarefa) => {
+    await Tarefa.findById(req.params.id, (err, tarefa) => {
         if (err) {
             return res.status(400).json({ success: false, error: err })
         }
@@ -101,7 +100,7 @@ getTarefaById = async (req, res) => {
                 .status(404)
                 .json({ success: false, error: `Tarefa não encontrada` })
         }
-        return res.status(200).json({ success: true, data: Tarefa })
+        return res.status(200).json({ success: true, data: tarefa })
     }).catch(err => console.log(err))
 }
 
