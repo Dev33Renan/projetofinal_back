@@ -18,12 +18,12 @@ const db_data = process.env.DB_DATA;
 Conn(db_url, db_user, db_pass,db_data);
 
 
-const corsOptions = {origin:'http://localhost:3000',
-    optionsSuccessStatus:200,
+// const corsOptions = {origin:'http://localhost:3000',
+//     optionsSuccessStatus:200,
 
-} 
+// } 
 const app = express();
-app.use (cors(corsOptions))
+app.use (cors())
 app.use (express.json())
 
 app.get ("/", (req , res) => {
