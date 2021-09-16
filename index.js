@@ -37,4 +37,4 @@ app.use('/tarefa',tarefasRouter);
 
 const PORT = 4000
 
-app.listen(PORT, () => console.log(`Servidor Rodando em http://localhost:${PORT}`) )
+app.listen(process.env.PORT || PORT, () => console.log(`Servidor Rodando em http://localhost:${PORT}`) )
